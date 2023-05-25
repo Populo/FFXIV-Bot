@@ -21,6 +21,8 @@ namespace FFXIVBot
             textBoxRight.Text = Helper.RightTurn.ToString();
             textBoxMLeft.Text = Helper.MoveLeft.ToString();
             textBoxMRight.Text = Helper.MoveRight.ToString();
+            textBoxCraft.Text = Helper.Craft.ToString();
+            textBoxGather.Text = Helper.Gather.ToString();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -32,6 +34,8 @@ namespace FFXIVBot
             ConfigurationManager.AppSettings["back"] = textBoxBackwards.Text;
             ConfigurationManager.AppSettings["moveLeft"] = textBoxMLeft.Text;
             ConfigurationManager.AppSettings["moveRight"] = textBoxMRight.Text;
+            ConfigurationManager.AppSettings["craftMacro"] = textBoxCraft.Text;
+            ConfigurationManager.AppSettings["gatherMacro"] = textBoxGather.Text;
             
             this.Close();
         }

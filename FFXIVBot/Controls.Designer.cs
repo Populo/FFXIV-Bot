@@ -47,6 +47,10 @@ namespace FFXIVBot
             this.label8 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.textBoxCraft = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxGather = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -59,7 +63,7 @@ namespace FFXIVBot
             // 
             // textBoxLeft
             // 
-            this.textBoxLeft.Location = new System.Drawing.Point(88, 12);
+            this.textBoxLeft.Location = new System.Drawing.Point(152, 12);
             this.textBoxLeft.MaxLength = 1;
             this.textBoxLeft.Name = "textBoxLeft";
             this.textBoxLeft.Size = new System.Drawing.Size(98, 20);
@@ -67,7 +71,7 @@ namespace FFXIVBot
             // 
             // textBoxRight
             // 
-            this.textBoxRight.Location = new System.Drawing.Point(88, 38);
+            this.textBoxRight.Location = new System.Drawing.Point(152, 38);
             this.textBoxRight.MaxLength = 1;
             this.textBoxRight.Name = "textBoxRight";
             this.textBoxRight.Size = new System.Drawing.Size(98, 20);
@@ -83,7 +87,7 @@ namespace FFXIVBot
             // 
             // textBoxForward
             // 
-            this.textBoxForward.Location = new System.Drawing.Point(88, 64);
+            this.textBoxForward.Location = new System.Drawing.Point(152, 64);
             this.textBoxForward.MaxLength = 1;
             this.textBoxForward.Name = "textBoxForward";
             this.textBoxForward.Size = new System.Drawing.Size(98, 20);
@@ -99,7 +103,7 @@ namespace FFXIVBot
             // 
             // textBoxMLeft
             // 
-            this.textBoxMLeft.Location = new System.Drawing.Point(88, 90);
+            this.textBoxMLeft.Location = new System.Drawing.Point(152, 90);
             this.textBoxMLeft.MaxLength = 1;
             this.textBoxMLeft.Name = "textBoxMLeft";
             this.textBoxMLeft.Size = new System.Drawing.Size(98, 20);
@@ -115,7 +119,7 @@ namespace FFXIVBot
             // 
             // textBoxJump
             // 
-            this.textBoxJump.Location = new System.Drawing.Point(88, 168);
+            this.textBoxJump.Location = new System.Drawing.Point(152, 168);
             this.textBoxJump.MaxLength = 1;
             this.textBoxJump.Name = "textBoxJump";
             this.textBoxJump.Size = new System.Drawing.Size(98, 20);
@@ -131,7 +135,7 @@ namespace FFXIVBot
             // 
             // textBoxBackwards
             // 
-            this.textBoxBackwards.Location = new System.Drawing.Point(88, 142);
+            this.textBoxBackwards.Location = new System.Drawing.Point(152, 142);
             this.textBoxBackwards.MaxLength = 1;
             this.textBoxBackwards.Name = "textBoxBackwards";
             this.textBoxBackwards.Size = new System.Drawing.Size(98, 20);
@@ -147,7 +151,7 @@ namespace FFXIVBot
             // 
             // textBoxMRight
             // 
-            this.textBoxMRight.Location = new System.Drawing.Point(88, 116);
+            this.textBoxMRight.Location = new System.Drawing.Point(152, 116);
             this.textBoxMRight.MaxLength = 1;
             this.textBoxMRight.Name = "textBoxMRight";
             this.textBoxMRight.Size = new System.Drawing.Size(98, 20);
@@ -163,7 +167,7 @@ namespace FFXIVBot
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(7, 194);
+            this.buttonSave.Location = new System.Drawing.Point(7, 246);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 20);
             this.buttonSave.TabIndex = 14;
@@ -173,7 +177,7 @@ namespace FFXIVBot
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(111, 194);
+            this.buttonCancel.Location = new System.Drawing.Point(175, 246);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 20);
             this.buttonCancel.TabIndex = 15;
@@ -181,11 +185,47 @@ namespace FFXIVBot
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
+            // textBoxCraft
+            // 
+            this.textBoxCraft.Location = new System.Drawing.Point(152, 194);
+            this.textBoxCraft.MaxLength = 1;
+            this.textBoxCraft.Name = "textBoxCraft";
+            this.textBoxCraft.Size = new System.Drawing.Size(98, 20);
+            this.textBoxCraft.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(7, 197);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 17);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Craft Macro";
+            // 
+            // textBoxGather
+            // 
+            this.textBoxGather.Location = new System.Drawing.Point(152, 220);
+            this.textBoxGather.MaxLength = 1;
+            this.textBoxGather.Name = "textBoxGather";
+            this.textBoxGather.Size = new System.Drawing.Size(98, 20);
+            this.textBoxGather.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(7, 223);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(123, 17);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Gather Macro";
+            // 
             // Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(198, 224);
+            this.ClientSize = new System.Drawing.Size(262, 274);
+            this.Controls.Add(this.textBoxGather);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.textBoxCraft);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxJump);
@@ -210,6 +250,7 @@ namespace FFXIVBot
             this.Load += new System.EventHandler(this.Controls_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.TextBox textBoxJump;
@@ -232,5 +273,10 @@ namespace FFXIVBot
         private System.Windows.Forms.TextBox textBoxLeft;
 
         #endregion
+
+        private System.Windows.Forms.TextBox textBoxCraft;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxGather;
+        private System.Windows.Forms.Label label9;
     }
 }

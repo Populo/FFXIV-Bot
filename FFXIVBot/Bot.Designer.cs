@@ -36,6 +36,7 @@
             this.labelProcess = new System.Windows.Forms.Label();
             this.buttonOptions = new System.Windows.Forms.Button();
             this.backgroundWorkerAfkBot = new System.ComponentModel.BackgroundWorker();
+            this.buttonAutoGather = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonSpinner
@@ -60,18 +61,18 @@
             // 
             // buttonCrafting
             // 
-            this.buttonCrafting.Enabled = false;
-            this.buttonCrafting.Location = new System.Drawing.Point(12, 136);
+            this.buttonCrafting.Location = new System.Drawing.Point(12, 198);
             this.buttonCrafting.Name = "buttonCrafting";
             this.buttonCrafting.Size = new System.Drawing.Size(260, 56);
             this.buttonCrafting.TabIndex = 2;
             this.buttonCrafting.Text = "Auto Crafting";
             this.buttonCrafting.UseVisualStyleBackColor = true;
+            this.buttonCrafting.Click += new System.EventHandler(this.buttonCrafting_Click);
             // 
             // buttonAutomation
             // 
             this.buttonAutomation.Enabled = false;
-            this.buttonAutomation.Location = new System.Drawing.Point(12, 198);
+            this.buttonAutomation.Location = new System.Drawing.Point(12, 260);
             this.buttonAutomation.Name = "buttonAutomation";
             this.buttonAutomation.Size = new System.Drawing.Size(260, 56);
             this.buttonAutomation.TabIndex = 3;
@@ -80,7 +81,7 @@
             // 
             // labelProcess
             // 
-            this.labelProcess.Location = new System.Drawing.Point(12, 269);
+            this.labelProcess.Location = new System.Drawing.Point(12, 331);
             this.labelProcess.Name = "labelProcess";
             this.labelProcess.Size = new System.Drawing.Size(166, 19);
             this.labelProcess.TabIndex = 4;
@@ -89,7 +90,7 @@
             // 
             // buttonOptions
             // 
-            this.buttonOptions.Location = new System.Drawing.Point(194, 260);
+            this.buttonOptions.Location = new System.Drawing.Point(194, 322);
             this.buttonOptions.Name = "buttonOptions";
             this.buttonOptions.Size = new System.Drawing.Size(78, 30);
             this.buttonOptions.TabIndex = 5;
@@ -102,11 +103,22 @@
             this.backgroundWorkerAfkBot.WorkerSupportsCancellation = true;
             this.backgroundWorkerAfkBot.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerAfkBot_DoWork);
             // 
+            // buttonAutoGather
+            // 
+            this.buttonAutoGather.Location = new System.Drawing.Point(12, 136);
+            this.buttonAutoGather.Name = "buttonAutoGather";
+            this.buttonAutoGather.Size = new System.Drawing.Size(260, 56);
+            this.buttonAutoGather.TabIndex = 6;
+            this.buttonAutoGather.Text = "Island Sanctuary Gathering Bot";
+            this.buttonAutoGather.UseVisualStyleBackColor = true;
+            this.buttonAutoGather.Click += new System.EventHandler(this.buttonAutoGather_Click);
+            // 
             // Bot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 299);
+            this.ClientSize = new System.Drawing.Size(284, 360);
+            this.Controls.Add(this.buttonAutoGather);
             this.Controls.Add(this.buttonOptions);
             this.Controls.Add(this.labelProcess);
             this.Controls.Add(this.buttonAutomation);
@@ -119,7 +131,10 @@
             this.Name = "Bot";
             this.Text = "FFXIV Bot v1.0";
             this.ResumeLayout(false);
+
         }
+
+        private System.Windows.Forms.Button buttonAutoGather;
 
         private System.ComponentModel.BackgroundWorker backgroundWorkerAfkBot;
 

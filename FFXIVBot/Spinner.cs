@@ -45,7 +45,7 @@ namespace FFXIVBot
 
             if (Spinning)
             {
-                Helper.LiftKey(key);
+               // Helper.LiftKey(key);
                 buttonSpinLeft.Enabled = true;
                 Spinning = false;
             }
@@ -53,7 +53,7 @@ namespace FFXIVBot
             {
                 Spinning = true;
                 buttonSpinLeft.Enabled = false;
-                Helper.PressKey(key);
+             //   Helper.PressKey(key);
             }
         }
     }
