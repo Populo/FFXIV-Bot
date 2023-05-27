@@ -1,7 +1,30 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FFXIVBot.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="turnLeft" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">a</Value>
+    </Setting>
+    <Setting Name="turnRight" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">d</Value>
+    </Setting>
+    <Setting Name="forward" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">w</Value>
+    </Setting>
+    <Setting Name="back" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">s</Value>
+    </Setting>
+    <Setting Name="moveLeft" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">q</Value>
+    </Setting>
+    <Setting Name="moveRight" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">e</Value>
+    </Setting>
+    <Setting Name="craftMacro" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">]</Value>
+    </Setting>
+    <Setting Name="gatherMacro" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">[</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

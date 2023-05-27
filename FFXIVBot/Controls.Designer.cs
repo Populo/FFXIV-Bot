@@ -31,230 +31,226 @@ namespace FFXIVBot
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxLeft = new System.Windows.Forms.TextBox();
-            this.textBoxRight = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxForward = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxMLeft = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxJump = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxBackwards = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxMRight = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.textBoxCraft = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxGather = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            label1 = new System.Windows.Forms.Label();
+            textBoxLeft = new System.Windows.Forms.TextBox();
+            textBoxRight = new System.Windows.Forms.TextBox();
+            label2 = new System.Windows.Forms.Label();
+            textBoxForward = new System.Windows.Forms.TextBox();
+            label3 = new System.Windows.Forms.Label();
+            textBoxMLeft = new System.Windows.Forms.TextBox();
+            label4 = new System.Windows.Forms.Label();
+            textBoxBackwards = new System.Windows.Forms.TextBox();
+            label7 = new System.Windows.Forms.Label();
+            textBoxMRight = new System.Windows.Forms.TextBox();
+            label8 = new System.Windows.Forms.Label();
+            buttonSave = new System.Windows.Forms.Button();
+            buttonCancel = new System.Windows.Forms.Button();
+            textBoxCraft = new System.Windows.Forms.TextBox();
+            label5 = new System.Windows.Forms.Label();
+            textBoxGather = new System.Windows.Forms.TextBox();
+            label9 = new System.Windows.Forms.Label();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(7, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Turn Left";
+            label1.Location = new System.Drawing.Point(8, 17);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(70, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Turn Left";
             // 
             // textBoxLeft
             // 
-            this.textBoxLeft.Location = new System.Drawing.Point(152, 12);
-            this.textBoxLeft.MaxLength = 1;
-            this.textBoxLeft.Name = "textBoxLeft";
-            this.textBoxLeft.Size = new System.Drawing.Size(98, 20);
-            this.textBoxLeft.TabIndex = 1;
+            textBoxLeft.Location = new System.Drawing.Point(177, 14);
+            textBoxLeft.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBoxLeft.MaxLength = 1;
+            textBoxLeft.Name = "textBoxLeft";
+            textBoxLeft.Size = new System.Drawing.Size(114, 23);
+            textBoxLeft.TabIndex = 1;
             // 
             // textBoxRight
             // 
-            this.textBoxRight.Location = new System.Drawing.Point(152, 38);
-            this.textBoxRight.MaxLength = 1;
-            this.textBoxRight.Name = "textBoxRight";
-            this.textBoxRight.Size = new System.Drawing.Size(98, 20);
-            this.textBoxRight.TabIndex = 3;
+            textBoxRight.Location = new System.Drawing.Point(177, 44);
+            textBoxRight.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBoxRight.MaxLength = 1;
+            textBoxRight.Name = "textBoxRight";
+            textBoxRight.Size = new System.Drawing.Size(114, 23);
+            textBoxRight.TabIndex = 3;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(7, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Turn Right";
+            label2.Location = new System.Drawing.Point(8, 47);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(70, 20);
+            label2.TabIndex = 2;
+            label2.Text = "Turn Right";
             // 
             // textBoxForward
             // 
-            this.textBoxForward.Location = new System.Drawing.Point(152, 64);
-            this.textBoxForward.MaxLength = 1;
-            this.textBoxForward.Name = "textBoxForward";
-            this.textBoxForward.Size = new System.Drawing.Size(98, 20);
-            this.textBoxForward.TabIndex = 5;
+            textBoxForward.Location = new System.Drawing.Point(177, 74);
+            textBoxForward.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBoxForward.MaxLength = 1;
+            textBoxForward.Name = "textBoxForward";
+            textBoxForward.Size = new System.Drawing.Size(114, 23);
+            textBoxForward.TabIndex = 5;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(7, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Forward";
+            label3.Location = new System.Drawing.Point(8, 77);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(70, 20);
+            label3.TabIndex = 4;
+            label3.Text = "Forward";
             // 
             // textBoxMLeft
             // 
-            this.textBoxMLeft.Location = new System.Drawing.Point(152, 90);
-            this.textBoxMLeft.MaxLength = 1;
-            this.textBoxMLeft.Name = "textBoxMLeft";
-            this.textBoxMLeft.Size = new System.Drawing.Size(98, 20);
-            this.textBoxMLeft.TabIndex = 7;
+            textBoxMLeft.Location = new System.Drawing.Point(177, 104);
+            textBoxMLeft.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBoxMLeft.MaxLength = 1;
+            textBoxMLeft.Name = "textBoxMLeft";
+            textBoxMLeft.Size = new System.Drawing.Size(114, 23);
+            textBoxMLeft.TabIndex = 7;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(7, 93);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Move Left";
-            // 
-            // textBoxJump
-            // 
-            this.textBoxJump.Location = new System.Drawing.Point(152, 168);
-            this.textBoxJump.MaxLength = 1;
-            this.textBoxJump.Name = "textBoxJump";
-            this.textBoxJump.Size = new System.Drawing.Size(98, 20);
-            this.textBoxJump.TabIndex = 13;
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(7, 171);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 17);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Jump";
+            label4.Location = new System.Drawing.Point(8, 107);
+            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(70, 20);
+            label4.TabIndex = 6;
+            label4.Text = "Move Left";
             // 
             // textBoxBackwards
             // 
-            this.textBoxBackwards.Location = new System.Drawing.Point(152, 142);
-            this.textBoxBackwards.MaxLength = 1;
-            this.textBoxBackwards.Name = "textBoxBackwards";
-            this.textBoxBackwards.Size = new System.Drawing.Size(98, 20);
-            this.textBoxBackwards.TabIndex = 11;
+            textBoxBackwards.Location = new System.Drawing.Point(177, 164);
+            textBoxBackwards.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBoxBackwards.MaxLength = 1;
+            textBoxBackwards.Name = "textBoxBackwards";
+            textBoxBackwards.Size = new System.Drawing.Size(114, 23);
+            textBoxBackwards.TabIndex = 11;
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(7, 145);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 17);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Backwards";
+            label7.Location = new System.Drawing.Point(8, 167);
+            label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(70, 20);
+            label7.TabIndex = 10;
+            label7.Text = "Backwards";
             // 
             // textBoxMRight
             // 
-            this.textBoxMRight.Location = new System.Drawing.Point(152, 116);
-            this.textBoxMRight.MaxLength = 1;
-            this.textBoxMRight.Name = "textBoxMRight";
-            this.textBoxMRight.Size = new System.Drawing.Size(98, 20);
-            this.textBoxMRight.TabIndex = 9;
+            textBoxMRight.Location = new System.Drawing.Point(177, 134);
+            textBoxMRight.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBoxMRight.MaxLength = 1;
+            textBoxMRight.Name = "textBoxMRight";
+            textBoxMRight.Size = new System.Drawing.Size(114, 23);
+            textBoxMRight.TabIndex = 9;
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(7, 119);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 17);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Move Right";
+            label8.Location = new System.Drawing.Point(8, 137);
+            label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(88, 20);
+            label8.TabIndex = 8;
+            label8.Text = "Move Right";
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(7, 246);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 20);
-            this.buttonSave.TabIndex = 14;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            buttonSave.Location = new System.Drawing.Point(7, 252);
+            buttonSave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonSave.Name = "buttonSave";
+            buttonSave.Size = new System.Drawing.Size(88, 23);
+            buttonSave.TabIndex = 14;
+            buttonSave.Text = "Save";
+            buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += buttonSave_Click;
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(175, 246);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 20);
-            this.buttonCancel.TabIndex = 15;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            buttonCancel.Location = new System.Drawing.Point(203, 252);
+            buttonCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonCancel.Name = "buttonCancel";
+            buttonCancel.Size = new System.Drawing.Size(88, 23);
+            buttonCancel.TabIndex = 15;
+            buttonCancel.Text = "Cancel";
+            buttonCancel.UseVisualStyleBackColor = true;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // textBoxCraft
             // 
-            this.textBoxCraft.Location = new System.Drawing.Point(152, 194);
-            this.textBoxCraft.MaxLength = 1;
-            this.textBoxCraft.Name = "textBoxCraft";
-            this.textBoxCraft.Size = new System.Drawing.Size(98, 20);
-            this.textBoxCraft.TabIndex = 17;
+            textBoxCraft.Location = new System.Drawing.Point(177, 193);
+            textBoxCraft.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBoxCraft.MaxLength = 1;
+            textBoxCraft.Name = "textBoxCraft";
+            textBoxCraft.Size = new System.Drawing.Size(114, 23);
+            textBoxCraft.TabIndex = 17;
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(7, 197);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 17);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Craft Macro";
+            label5.Location = new System.Drawing.Point(8, 196);
+            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(118, 20);
+            label5.TabIndex = 16;
+            label5.Text = "Craft Macro";
             // 
             // textBoxGather
             // 
-            this.textBoxGather.Location = new System.Drawing.Point(152, 220);
-            this.textBoxGather.MaxLength = 1;
-            this.textBoxGather.Name = "textBoxGather";
-            this.textBoxGather.Size = new System.Drawing.Size(98, 20);
-            this.textBoxGather.TabIndex = 19;
+            textBoxGather.Location = new System.Drawing.Point(177, 223);
+            textBoxGather.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBoxGather.MaxLength = 1;
+            textBoxGather.Name = "textBoxGather";
+            textBoxGather.Size = new System.Drawing.Size(114, 23);
+            textBoxGather.TabIndex = 19;
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(7, 223);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(123, 17);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Gather Macro";
+            label9.Location = new System.Drawing.Point(8, 226);
+            label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(144, 20);
+            label9.TabIndex = 18;
+            label9.Text = "Gather Macro";
             // 
             // Controls
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(262, 274);
-            this.Controls.Add(this.textBoxGather);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBoxCraft);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.textBoxJump);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBoxBackwards);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBoxMRight);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBoxMLeft);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBoxForward);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxRight);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxLeft);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Controls";
-            this.Text = "Controls";
-            this.Load += new System.EventHandler(this.Controls_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(306, 281);
+            Controls.Add(textBoxGather);
+            Controls.Add(label9);
+            Controls.Add(textBoxCraft);
+            Controls.Add(label5);
+            Controls.Add(buttonCancel);
+            Controls.Add(buttonSave);
+            Controls.Add(textBoxBackwards);
+            Controls.Add(label7);
+            Controls.Add(textBoxMRight);
+            Controls.Add(label8);
+            Controls.Add(textBoxMLeft);
+            Controls.Add(label4);
+            Controls.Add(textBoxForward);
+            Controls.Add(label3);
+            Controls.Add(textBoxRight);
+            Controls.Add(label2);
+            Controls.Add(textBoxLeft);
+            Controls.Add(label1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Controls";
+            Text = "Controls";
+            Load += Controls_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
-        private System.Windows.Forms.TextBox textBoxJump;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxBackwards;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxMRight;

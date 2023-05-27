@@ -1,8 +1,8 @@
-﻿using System;
+﻿using FFXIVBot.Properties;
+using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Deployment.Application;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -25,16 +25,19 @@ namespace FFXIVBot
         public static int NumpadTwo = 0x62;
         public static int NumpadFive = 0x65;
         public static int NumpadEight = 0x68;
-        public static char LeftTurn => GetConfigValue("turnLeft");
-        public static char RightTurn => GetConfigValue("turnRight");
-        public static char MoveLeft => GetConfigValue("moveLeft");
-        public static char MoveRight => GetConfigValue("moveRight");
-        public static char Forward => GetConfigValue("forward");
-        public static char Backward => GetConfigValue("back");
-        public static char Jump => GetConfigValue("jump");
-        public static char Craft => GetConfigValue("craftMacro");
-        public static char Gather => GetConfigValue("gatherMacro");
-        
+
+        public static char LeftTurn => Settings.Default.turnLeft;
+        public static char RightTurn => Settings.Default.turnRight;
+        public static char MoveLeft => Settings.Default.moveLeft;
+        public static char MoveRight => Settings.Default.moveRight;
+        public static char Forward => Settings.Default.forward;
+        public static char Backward => Settings.Default.back;
+        public static char Jump => ' ';
+        public static char Craft => Settings.Default.craftMacro;
+        public static char Gather => Settings.Default.gatherMacro;
+
+        public static SettingsBackup SettingsObject => BuildObject();
+
         public static Process Process { get; set; }
 
         public static void PreventSleep()
@@ -93,23 +96,28 @@ namespace FFXIVBot
             return CharHelper.Low;
         }
         
-        private static char GetConfigValue(string appSetting)
-        {
-            var value = ConfigurationManager.AppSettings[appSetting];
-            if (string.IsNullOrEmpty(value))
-            {
-                return Char.MaxValue;
-            }
-
-            return value[0];
-        }
-        
         [StructLayout(LayoutKind.Explicit)]
         struct CharHelper
         {
             [FieldOffset(0)]public short Value;
             [FieldOffset(0)]public byte Low;
             [FieldOffset(1)]public byte High;
+        }
+
+        private static SettingsBackup BuildObject()
+        {
+            return new SettingsBackup
+            {
+                Backward = Backward,
+                Forward = Forward,
+                MoveLeft = MoveLeft,
+                MoveRight = MoveRight,
+                RightTurn = RightTurn,
+                LeftTurn = LeftTurn,
+                Craft = Craft,
+                Gather = Gather,
+                Version = Bot.Version
+            };
         }
     }
     

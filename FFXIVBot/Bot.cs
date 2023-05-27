@@ -1,22 +1,34 @@
-﻿using System;
+﻿using FFXIVBot.Properties;
+using Newtonsoft.Json;
+using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
+[assembly: AssemblyVersion("2023.5.27.1")]
 namespace FFXIVBot
 {
     public partial class Bot : Form
     {
-        public static Version Version = new Version(1, 1);
-        
+        public static Version Version;
+        private SettingsBackup _settings { get; set; }
+        private string jsonPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\FFXIVBot\\";
+        private string jsonFile = "backup.json";
+        private string fullJson => jsonPath + jsonFile;
+
+
         private bool Running { get; set; }
         
         private Random Random { get; set; }
 
         public Bot()
         {
+            Version = typeof(Bot).Assembly.GetName().Version;
+
             InitializeComponent();
 
             Random = new Random();
@@ -26,6 +38,41 @@ namespace FFXIVBot
             Text = $"FFXIV Bot v{Version}";
             
             labelProcess_Click(this, EventArgs.Empty);
+
+            FormClosing += Bot_FormClosing;
+
+            _settings = Helper.SettingsObject;
+
+            if (File.Exists(fullJson))
+            {
+                var oldSettings = JsonConvert.DeserializeObject<SettingsBackup>(File.ReadAllText(fullJson));
+
+                if (oldSettings.Version < Version)
+                {
+                    Settings.Default.turnLeft = oldSettings.LeftTurn;
+                    Settings.Default.turnRight = oldSettings.RightTurn;
+                    Settings.Default.moveLeft = oldSettings.MoveLeft;
+                    Settings.Default.moveRight = oldSettings.MoveRight;
+                    Settings.Default.forward = oldSettings.Forward;
+                    Settings.Default.back = oldSettings.Backward;
+                    Settings.Default.craftMacro = oldSettings.Craft;
+                    Settings.Default.gatherMacro = oldSettings.Gather;
+
+                    Settings.Default.Save();
+
+                    oldSettings.Version = Version;
+
+                    _settings = oldSettings;
+                }
+            }
+        }
+
+        private void Bot_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!Directory.Exists(jsonPath)) Directory.CreateDirectory(jsonPath);
+
+            _settings = Helper.SettingsObject;
+            File.WriteAllTextAsync(fullJson, JsonConvert.SerializeObject(_settings));
         }
 
         private void labelProcess_Click(object sender, EventArgs e)

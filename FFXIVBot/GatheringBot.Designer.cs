@@ -28,182 +28,250 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numericUpDownDuration = new System.Windows.Forms.NumericUpDown();
-            this.buttonGather = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxHotkey = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.backgroundWorkerGatherBot = new System.ComponentModel.BackgroundWorker();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.radioButtonLeft = new System.Windows.Forms.RadioButton();
-            this.radioButtonNone = new System.Windows.Forms.RadioButton();
-            this.radioButtonRight = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDownTurn = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTurn)).BeginInit();
-            this.SuspendLayout();
+            numericUpDownDuration = new System.Windows.Forms.NumericUpDown();
+            buttonGather = new System.Windows.Forms.Button();
+            label2 = new System.Windows.Forms.Label();
+            textBoxHotkey = new System.Windows.Forms.TextBox();
+            label1 = new System.Windows.Forms.Label();
+            backgroundWorkerGatherBot = new System.ComponentModel.BackgroundWorker();
+            panel1 = new System.Windows.Forms.Panel();
+            numericUpDownTurn = new System.Windows.Forms.NumericUpDown();
+            label4 = new System.Windows.Forms.Label();
+            radioButtonRight = new System.Windows.Forms.RadioButton();
+            radioButtonNone = new System.Windows.Forms.RadioButton();
+            radioButtonLeft = new System.Windows.Forms.RadioButton();
+            label3 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            labelxp = new System.Windows.Forms.Label();
+            numericUpDownGather = new System.Windows.Forms.NumericUpDown();
+            label6 = new System.Windows.Forms.Label();
+            labelFortyThou = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownDuration).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownTurn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownGather).BeginInit();
+            SuspendLayout();
             // 
             // numericUpDownDuration
             // 
-            this.numericUpDownDuration.Location = new System.Drawing.Point(101, 33);
-            this.numericUpDownDuration.Name = "numericUpDownDuration";
-            this.numericUpDownDuration.Size = new System.Drawing.Size(114, 20);
-            this.numericUpDownDuration.TabIndex = 12;
-            this.numericUpDownDuration.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
+            numericUpDownDuration.DecimalPlaces = 2;
+            numericUpDownDuration.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDownDuration.Location = new System.Drawing.Point(118, 38);
+            numericUpDownDuration.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            numericUpDownDuration.Name = "numericUpDownDuration";
+            numericUpDownDuration.Size = new System.Drawing.Size(133, 23);
+            numericUpDownDuration.TabIndex = 12;
+            numericUpDownDuration.Value = new decimal(new int[] { 5, 0, 0, 0 });
             // 
             // buttonGather
             // 
-            this.buttonGather.Location = new System.Drawing.Point(12, 59);
-            this.buttonGather.Name = "buttonGather";
-            this.buttonGather.Size = new System.Drawing.Size(203, 41);
-            this.buttonGather.TabIndex = 11;
-            this.buttonGather.Text = "Gather";
-            this.buttonGather.UseVisualStyleBackColor = true;
-            this.buttonGather.Click += new System.EventHandler(this.buttonGather_Click);
+            buttonGather.Location = new System.Drawing.Point(13, 96);
+            buttonGather.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonGather.Name = "buttonGather";
+            buttonGather.Size = new System.Drawing.Size(237, 47);
+            buttonGather.TabIndex = 11;
+            buttonGather.Text = "Gather";
+            buttonGather.UseVisualStyleBackColor = true;
+            buttonGather.Click += buttonGather_Click;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(12, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 16);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Wait Time (s):";
+            label2.Location = new System.Drawing.Point(14, 40);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(98, 18);
+            label2.TabIndex = 10;
+            label2.Text = "Run Time (s):";
             // 
             // textBoxHotkey
             // 
-            this.textBoxHotkey.Location = new System.Drawing.Point(102, 6);
-            this.textBoxHotkey.MaxLength = 1;
-            this.textBoxHotkey.Name = "textBoxHotkey";
-            this.textBoxHotkey.Size = new System.Drawing.Size(113, 20);
-            this.textBoxHotkey.TabIndex = 9;
-            this.textBoxHotkey.TextChanged += new System.EventHandler(this.textBoxHotkey_TextChanged);
+            textBoxHotkey.Location = new System.Drawing.Point(119, 7);
+            textBoxHotkey.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBoxHotkey.MaxLength = 1;
+            textBoxHotkey.Name = "textBoxHotkey";
+            textBoxHotkey.Size = new System.Drawing.Size(131, 23);
+            textBoxHotkey.TabIndex = 9;
+            textBoxHotkey.TextChanged += textBoxHotkey_TextChanged;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 16);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Macro Hotkey:";
+            label1.Location = new System.Drawing.Point(14, 10);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(98, 18);
+            label1.TabIndex = 8;
+            label1.Text = "Macro Hotkey:";
             // 
             // backgroundWorkerGatherBot
             // 
-            this.backgroundWorkerGatherBot.WorkerSupportsCancellation = true;
-            this.backgroundWorkerGatherBot.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerGatherBot_DoWork);
+            backgroundWorkerGatherBot.WorkerSupportsCancellation = true;
+            backgroundWorkerGatherBot.DoWork += backgroundWorkerGatherBot_DoWork;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.numericUpDownTurn);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.radioButtonRight);
-            this.panel1.Controls.Add(this.radioButtonNone);
-            this.panel1.Controls.Add(this.radioButtonLeft);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(256, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(167, 82);
-            this.panel1.TabIndex = 13;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Turn:";
-            // 
-            // radioButtonLeft
-            // 
-            this.radioButtonLeft.AutoSize = true;
-            this.radioButtonLeft.Location = new System.Drawing.Point(6, 16);
-            this.radioButtonLeft.Name = "radioButtonLeft";
-            this.radioButtonLeft.Size = new System.Drawing.Size(43, 17);
-            this.radioButtonLeft.TabIndex = 1;
-            this.radioButtonLeft.Text = "Left";
-            this.radioButtonLeft.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonNone
-            // 
-            this.radioButtonNone.AutoSize = true;
-            this.radioButtonNone.Checked = true;
-            this.radioButtonNone.Location = new System.Drawing.Point(55, 16);
-            this.radioButtonNone.Name = "radioButtonNone";
-            this.radioButtonNone.Size = new System.Drawing.Size(51, 17);
-            this.radioButtonNone.TabIndex = 2;
-            this.radioButtonNone.TabStop = true;
-            this.radioButtonNone.Text = "None";
-            this.radioButtonNone.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonRight
-            // 
-            this.radioButtonRight.AutoSize = true;
-            this.radioButtonRight.Location = new System.Drawing.Point(112, 16);
-            this.radioButtonRight.Name = "radioButtonRight";
-            this.radioButtonRight.Size = new System.Drawing.Size(50, 17);
-            this.radioButtonRight.TabIndex = 3;
-            this.radioButtonRight.Text = "Right";
-            this.radioButtonRight.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Turn Time (ms):";
+            panel1.Controls.Add(numericUpDownTurn);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(radioButtonRight);
+            panel1.Controls.Add(radioButtonNone);
+            panel1.Controls.Add(radioButtonLeft);
+            panel1.Controls.Add(label3);
+            panel1.Location = new System.Drawing.Point(299, 7);
+            panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(195, 95);
+            panel1.TabIndex = 13;
             // 
             // numericUpDownTurn
             // 
-            this.numericUpDownTurn.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.numericUpDownTurn.Location = new System.Drawing.Point(6, 52);
-            this.numericUpDownTurn.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.numericUpDownTurn.Name = "numericUpDownTurn";
-            this.numericUpDownTurn.Size = new System.Drawing.Size(156, 20);
-            this.numericUpDownTurn.TabIndex = 5;
-            this.numericUpDownTurn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDownTurn.Value = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
+            numericUpDownTurn.Increment = new decimal(new int[] { 100, 0, 0, 0 });
+            numericUpDownTurn.Location = new System.Drawing.Point(7, 60);
+            numericUpDownTurn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            numericUpDownTurn.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
+            numericUpDownTurn.Name = "numericUpDownTurn";
+            numericUpDownTurn.Size = new System.Drawing.Size(182, 23);
+            numericUpDownTurn.TabIndex = 5;
+            numericUpDownTurn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            numericUpDownTurn.Value = new decimal(new int[] { 200, 0, 0, 0 });
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(4, 42);
+            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(90, 15);
+            label4.TabIndex = 4;
+            label4.Text = "Turn Time (ms):";
+            // 
+            // radioButtonRight
+            // 
+            radioButtonRight.AutoSize = true;
+            radioButtonRight.Location = new System.Drawing.Point(131, 18);
+            radioButtonRight.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioButtonRight.Name = "radioButtonRight";
+            radioButtonRight.Size = new System.Drawing.Size(53, 19);
+            radioButtonRight.TabIndex = 3;
+            radioButtonRight.Text = "Right";
+            radioButtonRight.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonNone
+            // 
+            radioButtonNone.AutoSize = true;
+            radioButtonNone.Checked = true;
+            radioButtonNone.Location = new System.Drawing.Point(64, 18);
+            radioButtonNone.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioButtonNone.Name = "radioButtonNone";
+            radioButtonNone.Size = new System.Drawing.Size(54, 19);
+            radioButtonNone.TabIndex = 2;
+            radioButtonNone.TabStop = true;
+            radioButtonNone.Text = "None";
+            radioButtonNone.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonLeft
+            // 
+            radioButtonLeft.AutoSize = true;
+            radioButtonLeft.Location = new System.Drawing.Point(7, 18);
+            radioButtonLeft.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioButtonLeft.Name = "radioButtonLeft";
+            radioButtonLeft.Size = new System.Drawing.Size(45, 19);
+            radioButtonLeft.TabIndex = 1;
+            radioButtonLeft.Text = "Left";
+            radioButtonLeft.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(4, 0);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(34, 15);
+            label3.TabIndex = 0;
+            label3.Text = "Turn:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(303, 105);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(72, 15);
+            label5.TabIndex = 14;
+            label5.Text = "1k xp every: ";
+            // 
+            // labelxp
+            // 
+            labelxp.AutoSize = true;
+            labelxp.Location = new System.Drawing.Point(379, 105);
+            labelxp.Name = "labelxp";
+            labelxp.Size = new System.Drawing.Size(65, 15);
+            labelxp.TabIndex = 15;
+            labelxp.Text = "69 minutes";
+            // 
+            // numericUpDownGather
+            // 
+            numericUpDownGather.DecimalPlaces = 2;
+            numericUpDownGather.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDownGather.Location = new System.Drawing.Point(118, 67);
+            numericUpDownGather.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            numericUpDownGather.Name = "numericUpDownGather";
+            numericUpDownGather.Size = new System.Drawing.Size(133, 23);
+            numericUpDownGather.TabIndex = 17;
+            numericUpDownGather.Value = new decimal(new int[] { 25, 0, 0, 65536 });
+            // 
+            // label6
+            // 
+            label6.Location = new System.Drawing.Point(14, 69);
+            label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(98, 18);
+            label6.TabIndex = 16;
+            label6.Text = "Gather Time (s):";
+            // 
+            // labelFortyThou
+            // 
+            labelFortyThou.AutoSize = true;
+            labelFortyThou.Location = new System.Drawing.Point(379, 120);
+            labelFortyThou.Name = "labelFortyThou";
+            labelFortyThou.Size = new System.Drawing.Size(65, 15);
+            labelFortyThou.TabIndex = 19;
+            labelFortyThou.Text = "69 minutes";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(297, 120);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(78, 15);
+            label7.TabIndex = 20;
+            label7.Text = "45k xp every: ";
             // 
             // GatheringBot
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 110);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.numericUpDownDuration);
-            this.Controls.Add(this.buttonGather);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxHotkey);
-            this.Controls.Add(this.label1);
-            this.Name = "GatheringBot";
-            this.Text = "Auto Gathering";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTurn)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(507, 154);
+            Controls.Add(label7);
+            Controls.Add(labelFortyThou);
+            Controls.Add(numericUpDownGather);
+            Controls.Add(label6);
+            Controls.Add(labelxp);
+            Controls.Add(label5);
+            Controls.Add(panel1);
+            Controls.Add(numericUpDownDuration);
+            Controls.Add(buttonGather);
+            Controls.Add(label2);
+            Controls.Add(textBoxHotkey);
+            Controls.Add(label1);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "GatheringBot";
+            Text = "Auto Gathering";
+            ((System.ComponentModel.ISupportInitialize)numericUpDownDuration).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownTurn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownGather).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -221,5 +289,11 @@
         private System.Windows.Forms.RadioButton radioButtonRight;
         private System.Windows.Forms.RadioButton radioButtonNone;
         private System.Windows.Forms.RadioButton radioButtonLeft;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelxp;
+        private System.Windows.Forms.NumericUpDown numericUpDownGather;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelFortyThou;
+        private System.Windows.Forms.Label label7;
     }
 }

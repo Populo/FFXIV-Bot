@@ -1,12 +1,12 @@
-﻿using System;
-using System.Configuration;
+﻿using FFXIVBot.Properties;
+using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace FFXIVBot
 {
     public partial class Controls : Form
     {
-
         public Controls()
         {
             InitializeComponent();
@@ -16,7 +16,6 @@ namespace FFXIVBot
         {
             textBoxForward.Text = Helper.Forward.ToString();
             textBoxBackwards.Text = Helper.Backward.ToString();
-            textBoxJump.Text = Helper.Jump.ToString();
             textBoxLeft.Text = Helper.LeftTurn.ToString();
             textBoxRight.Text = Helper.RightTurn.ToString();
             textBoxMLeft.Text = Helper.MoveLeft.ToString();
@@ -27,16 +26,17 @@ namespace FFXIVBot
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            ConfigurationManager.AppSettings["turnLeft"] = textBoxLeft.Text;
-            ConfigurationManager.AppSettings["turnRight"] = textBoxRight.Text;
-            ConfigurationManager.AppSettings["jump"] = textBoxJump.Text;
-            ConfigurationManager.AppSettings["forward"] = textBoxForward.Text;
-            ConfigurationManager.AppSettings["back"] = textBoxBackwards.Text;
-            ConfigurationManager.AppSettings["moveLeft"] = textBoxMLeft.Text;
-            ConfigurationManager.AppSettings["moveRight"] = textBoxMRight.Text;
-            ConfigurationManager.AppSettings["craftMacro"] = textBoxCraft.Text;
-            ConfigurationManager.AppSettings["gatherMacro"] = textBoxGather.Text;
-            
+            Settings.Default.turnLeft = textBoxLeft.Text.First();
+            Settings.Default.turnRight = textBoxRight.Text.First();
+            Settings.Default.moveLeft = textBoxMLeft.Text.First();
+            Settings.Default.moveRight = textBoxMRight.Text.First();
+            Settings.Default.forward = textBoxForward.Text.First();
+            Settings.Default.back = textBoxBackwards.Text.First();
+            Settings.Default.craftMacro = textBoxCraft.Text.First();
+            Settings.Default.gatherMacro = textBoxGather.Text.First();
+
+            Settings.Default.Save();
+
             this.Close();
         }
 

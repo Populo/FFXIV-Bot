@@ -1,6 +1,8 @@
-﻿using System;
+﻿using FFXIVBot.Properties;
+using System;
 using System.ComponentModel;
 using System.Configuration;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -73,7 +75,8 @@ namespace FFXIVBot
 
         private void textBoxHotkey_TextChanged(object sender, EventArgs e)
         {
-            ConfigurationManager.AppSettings["craftMacro"] = textBoxHotkey.Text;
+            Settings.Default.craftMacro = textBoxHotkey.Text.First();
+            Settings.Default.Save();
         }
     }
 }

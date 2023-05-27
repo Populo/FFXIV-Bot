@@ -1,6 +1,8 @@
-﻿using System;
+﻿using FFXIVBot.Properties;
+using System;
 using System.ComponentModel;
 using System.Configuration;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -14,6 +16,14 @@ namespace FFXIVBot
         {
             InitializeComponent();
             textBoxHotkey.Text = Helper.Gather.ToString();
+
+            CalculateTime();
+            numericUpDownDuration.ValueChanged += (e, s) => CalculateTime();
+            numericUpDownTurn.ValueChanged += (e, s) => CalculateTime();
+            numericUpDownGather.ValueChanged += (e, s) => CalculateTime();
+            radioButtonLeft.CheckedChanged += (e, s) => CalculateTime();
+            radioButtonNone.CheckedChanged += (e, s) => CalculateTime();
+            radioButtonRight.CheckedChanged += (e, s) => CalculateTime();
         }
 
         private void backgroundWorkerGatherBot_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
@@ -38,7 +48,7 @@ namespace FFXIVBot
             Thread.Sleep((int)(numericUpDownDuration.Value * 1000));
             Helper.PressKeyForDuration(zeroKey);
 
-            Thread.Sleep(3 * 1000);
+            Thread.Sleep((int)numericUpDownGather.Value * 1000);
 
             if (radioButtonNone.Checked) return;
 
@@ -76,7 +86,30 @@ namespace FFXIVBot
 
         private void textBoxHotkey_TextChanged(object sender, EventArgs e)
         {
-            ConfigurationManager.AppSettings["gatherMacro"] = textBoxHotkey.Text;
+            Settings.Default.gatherMacro = textBoxHotkey.Text.First();
+            Settings.Default.Save();
+        }
+
+        private void CalculateTime()
+        {
+            var delay = numericUpDownDuration.Value * 1000;
+            var turn = numericUpDownTurn.Value; // already in ms
+
+            var fullTime = delay + (int)numericUpDownGather.Value * 1000; // x ms for 10 xp
+            if (!radioButtonNone.Checked) fullTime += turn;
+
+
+            var thousandXp = fullTime * 100; // 100 * 10 = 1000
+            var seconds = thousandXp / 1000;
+            seconds = Math.Round(seconds, 2);
+
+            var fortyk = fullTime * 4500; // 10xp * 4500 gathers = 45,000xp
+            var minutes = fortyk / 60000; // 60s * 1000ms
+            minutes = Math.Round(minutes, 2);
+
+
+            labelxp.Text = $"{seconds} seconds";
+            labelFortyThou.Text = $"{minutes} minutes";
         }
     }
 }
