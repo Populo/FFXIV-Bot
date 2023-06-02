@@ -62,10 +62,10 @@ namespace FFXIVBot
             PostMessage(Process.MainWindowHandle, WM_KEYUP, key, 3);
         }
         
-        public static void PressKeyForDuration(int key, int duration = 50)
+        public static void PressKeyForDuration(int key, int duration = 35)
         {
             PressKey(key);
-            Task.Delay(duration);
+            Thread.Sleep(duration);
             LiftKey(key);
         }
 
