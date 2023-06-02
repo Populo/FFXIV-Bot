@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace FFXIVBot
 {
@@ -61,10 +62,10 @@ namespace FFXIVBot
             PostMessage(Process.MainWindowHandle, WM_KEYUP, key, 3);
         }
         
-        public static void PressKeyForDuration(int key, int duration = 35)
+        public static void PressKeyForDuration(int key, int duration = 50)
         {
             PressKey(key);
-            Thread.Sleep(duration);
+            Task.Delay(duration);
             LiftKey(key);
         }
 

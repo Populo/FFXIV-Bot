@@ -1,7 +1,6 @@
 ﻿using FFXIVBot.Properties;
 using System;
 using System.ComponentModel;
-using System.Configuration;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -20,9 +19,9 @@ namespace FFXIVBot
             InitializeComponent();
             textBoxHotkey.Text = Helper.Craft.ToString();
 
-            numericUpDownCount.ValueChanged += (s, e) => EstimateTime();
-            numericUpDownDuration.ValueChanged += (s, e) => EstimateTime();
-            EstimateTime();
+            numericUpDownCount.ValueChanged += (s, e) => UpdateTimers(EstimateTime());
+            numericUpDownDuration.ValueChanged += (s, e) => UpdateTimers(EstimateTime());
+            UpdateTimers(EstimateTime());
         }
 
         private void backgroundWorkerCraftBot_DoWork(object sender, DoWorkEventArgs e)
@@ -80,17 +79,25 @@ namespace FFXIVBot
             Running = !Running;
         }
 
-        public void EstimateTime()
+        public void UpdateTimers(TimeSpan time)
         {
-            int remaining = _firstWait + _secondWait + _thirdWait;
-            remaining += (int)(numericUpDownDuration.Value * 1000);
+            string hours = time.ToString("%h"),
+                   minutes = time.ToString("%m"),
+                   seconds = time.ToString("%s");
 
-            remaining *= (int)numericUpDownCount.Value;
+            string format = $"{hours} h, {minutes} m, {seconds} s";
 
-            var seconds = Math.Round((decimal)remaining / 1000, 2);
+            labelTotal.Text = format;
+        }
 
-            if (seconds < 600) labelEstimate.Text = $"{seconds} seconds";
-            else if (seconds < 6000) labelEstimate.Text = $"{Math.Round(seconds/60, 2)} minutes";
+        public TimeSpan EstimateTime()
+        {
+            ulong remaining = _firstWait + _secondWait + _thirdWait;
+            remaining += (ulong)(numericUpDownDuration.Value * 1000);
+
+            remaining *= (ulong)numericUpDownCount.Value;
+
+            return TimeSpan.FromMilliseconds(remaining);
         }
 
         private void textBoxHotkey_TextChanged(object sender, EventArgs e)

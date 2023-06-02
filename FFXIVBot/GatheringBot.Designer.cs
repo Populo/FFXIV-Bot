@@ -216,7 +216,7 @@
             numericUpDownGather.Name = "numericUpDownGather";
             numericUpDownGather.Size = new System.Drawing.Size(133, 23);
             numericUpDownGather.TabIndex = 17;
-            numericUpDownGather.Value = new decimal(new int[] { 25, 0, 0, 65536 });
+            numericUpDownGather.Value = new decimal(new int[] { 2, 0, 0, 0 });
             // 
             // label6
             // 
@@ -243,7 +243,7 @@
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(78, 15);
             label7.TabIndex = 20;
-            label7.Text = "45k xp every: ";
+            label7.Text = "10k xp every: ";
             // 
             // GatheringBot
             // 

@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-[assembly: AssemblyVersion("2023.5.30.1")]
+[assembly: AssemblyVersion("2023.6.1.1")]
 namespace FFXIVBot
 {
     public partial class Bot : Form
@@ -98,13 +98,19 @@ namespace FFXIVBot
 
         private void buttonSpinner_Click(object sender, EventArgs e)
         {
-            Spinner spin = new Spinner();
+            Spinner spin = new Spinner
+            {
+                StartPosition = FormStartPosition.CenterParent
+            };
             spin.ShowDialog();
         }
 
         private void buttonOptions_Click(object sender, EventArgs e)
         {
-            var Controls = new Controls();
+            var Controls = new Controls
+            {
+                StartPosition = FormStartPosition.CenterParent
+            };
             Controls.ShowDialog();
         }
 
@@ -150,13 +156,16 @@ namespace FFXIVBot
 
         private void buttonCrafting_Click(object sender, EventArgs e)
         {
-            var bot = new CraftingBot();
+            var bot = new CraftingBot
+            {
+                StartPosition = FormStartPosition.CenterParent
+            };
             bot.ShowDialog();
         }
 
         private void buttonAutoGather_Click(object sender, EventArgs e)
         {
-            var bot = new GatheringBot();
+            var bot = new GatheringBot { StartPosition = FormStartPosition.CenterParent };
             bot.ShowDialog();
         }
     }

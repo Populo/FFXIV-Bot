@@ -40,7 +40,7 @@ namespace FFXIVBot
             numericUpDownCount = new System.Windows.Forms.NumericUpDown();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
-            labelEstimate = new System.Windows.Forms.Label();
+            labelTotal = new System.Windows.Forms.Label();
             ((ISupportInitialize)numericUpDownDuration).BeginInit();
             ((ISupportInitialize)numericUpDownCount).BeginInit();
             SuspendLayout();
@@ -75,7 +75,7 @@ namespace FFXIVBot
             // 
             // buttonCraft
             // 
-            buttonCraft.Location = new System.Drawing.Point(14, 120);
+            buttonCraft.Location = new System.Drawing.Point(13, 120);
             buttonCraft.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             buttonCraft.Name = "buttonCraft";
             buttonCraft.Size = new System.Drawing.Size(268, 47);
@@ -88,6 +88,7 @@ namespace FFXIVBot
             // 
             numericUpDownDuration.Location = new System.Drawing.Point(149, 36);
             numericUpDownDuration.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            numericUpDownDuration.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numericUpDownDuration.Name = "numericUpDownDuration";
             numericUpDownDuration.Size = new System.Drawing.Size(133, 23);
             numericUpDownDuration.TabIndex = 5;
@@ -124,23 +125,23 @@ namespace FFXIVBot
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(98, 18);
             label4.TabIndex = 8;
-            label4.Text = "Craft Time:\r\n";
+            label4.Text = "Craft Time:";
             // 
-            // labelEstimate
+            // labelTotal
             // 
-            labelEstimate.AutoSize = true;
-            labelEstimate.Location = new System.Drawing.Point(150, 99);
-            labelEstimate.Name = "labelEstimate";
-            labelEstimate.Size = new System.Drawing.Size(65, 15);
-            labelEstimate.TabIndex = 9;
-            labelEstimate.Text = "69 Minutes";
+            labelTotal.AutoSize = true;
+            labelTotal.Location = new System.Drawing.Point(150, 99);
+            labelTotal.Name = "labelTotal";
+            labelTotal.Size = new System.Drawing.Size(65, 15);
+            labelTotal.TabIndex = 9;
+            labelTotal.Text = "69 Minutes";
             // 
             // CraftingBot
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(296, 178);
-            Controls.Add(labelEstimate);
+            ClientSize = new System.Drawing.Size(296, 177);
+            Controls.Add(labelTotal);
             Controls.Add(label4);
             Controls.Add(numericUpDownCount);
             Controls.Add(label3);
@@ -175,6 +176,6 @@ namespace FFXIVBot
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label labelEstimate;
+        private System.Windows.Forms.Label labelTotal;
     }
 }

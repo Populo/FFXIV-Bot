@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace FFXIVBot
 {
@@ -92,24 +93,25 @@ namespace FFXIVBot
 
         private void CalculateTime()
         {
-            var delay = numericUpDownDuration.Value * 1000;
-            var turn = numericUpDownTurn.Value; // already in ms
+            ulong delay = (ulong)(numericUpDownDuration.Value * 1000);
+            ulong turn = (ulong)numericUpDownTurn.Value; // already in ms
+            ulong gather = (ulong)(numericUpDownGather.Value * 1000);
 
-            var fullTime = delay + (int)numericUpDownGather.Value * 1000; // x ms for 10 xp
-            if (!radioButtonNone.Checked) fullTime += turn;
+            if (!radioButtonNone.Checked) delay += turn;
 
+            var oneGather = TimeSpan.FromMilliseconds(delay + gather);
 
-            var thousandXp = fullTime * 100; // 100 * 10 = 1000
-            var seconds = thousandXp / 1000;
-            seconds = Math.Round(seconds, 2);
+            var oneThousand = oneGather * 100;
+            var tenThousand = oneGather * 1000;
 
-            var fortyk = fullTime * 4500; // 10xp * 4500 gathers = 45,000xp
-            var minutes = fortyk / 60000; // 60s * 1000ms
-            minutes = Math.Round(minutes, 2);
+            string oneKMin = oneThousand.ToString("%m"),
+                   oneKSec = oneThousand.ToString("%s"),
+                   tenKHour = tenThousand.ToString("%h"),
+                   tenKMin = tenThousand.ToString("%m"),
+                   tenKSec = tenThousand.ToString("%s");
 
-
-            labelxp.Text = $"{seconds} seconds";
-            labelFortyThou.Text = $"{minutes} minutes";
+            labelxp.Text = $"{oneKMin} m, {oneKSec} s";
+            labelFortyThou.Text = $"{tenKHour} h, {tenKMin} m, {tenKSec} s";
         }
     }
 }
