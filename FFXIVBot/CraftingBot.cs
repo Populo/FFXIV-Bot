@@ -33,7 +33,6 @@ namespace FFXIVBot
                 while (!worker.CancellationPending)
                 {
                     RunBot();
-                    Helper.PressKeyForDuration(Helper.NumpadZero);
                 }
             }
         }
@@ -57,6 +56,7 @@ namespace FFXIVBot
             Thread.Sleep((int)(numericUpDownDuration.Value * 1000));
 
             Thread.Sleep(_thirdWait);
+            Helper.PressKeyForDuration(Helper.NumpadZero);
 
             numericUpDownCount.Value -= 1;
         }
