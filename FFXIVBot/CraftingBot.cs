@@ -55,10 +55,10 @@ namespace FFXIVBot
             Helper.PressKeyForDuration(macroKey);
             Thread.Sleep((int)(numericUpDownDuration.Value * 1000));
 
-            Thread.Sleep(_thirdWait);
             Helper.PressKeyForDuration(Helper.NumpadZero);
+            Thread.Sleep(_thirdWait);
 
-            numericUpDownCount.Value -= 1;
+            numericUpDownCount.DownButton();
         }
 
         private void buttonCraft_Click(object sender, EventArgs e)
