@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-[assembly: AssemblyVersion("2023.6.4.1")]
+[assembly: AssemblyVersion("2023.6.17.1")]
 namespace FFXIVBot
 {
     public partial class Bot : Form

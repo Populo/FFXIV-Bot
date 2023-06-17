@@ -11,8 +11,8 @@ namespace FFXIVBot
     {
         private bool Running = false;
         private const int _firstWait = 500,
-                          _secondWait = 1250,
-                          _thirdWait = 2 * 1000; // 2 seconds
+                          _secondWait = 1500,
+                          _thirdWait = (int)(2.5 * 1000); // 2 seconds
 
         public CraftingBot()
         {
