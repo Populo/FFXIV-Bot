@@ -262,7 +262,10 @@
             Controls.Add(label2);
             Controls.Add(textBoxHotkey);
             Controls.Add(label1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "GatheringBot";
             Text = "Auto Gathering";
             ((System.ComponentModel.ISupportInitialize)numericUpDownDuration).EndInit();

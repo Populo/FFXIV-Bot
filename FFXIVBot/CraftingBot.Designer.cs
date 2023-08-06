@@ -56,7 +56,7 @@ namespace FFXIVBot
             // 
             // textBoxHotkey
             // 
-            textBoxHotkey.Location = new System.Drawing.Point(150, 5);
+            textBoxHotkey.Location = new System.Drawing.Point(154, 5);
             textBoxHotkey.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             textBoxHotkey.MaxLength = 1;
             textBoxHotkey.Name = "textBoxHotkey";
@@ -78,7 +78,7 @@ namespace FFXIVBot
             buttonCraft.Location = new System.Drawing.Point(13, 120);
             buttonCraft.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             buttonCraft.Name = "buttonCraft";
-            buttonCraft.Size = new System.Drawing.Size(268, 47);
+            buttonCraft.Size = new System.Drawing.Size(273, 47);
             buttonCraft.TabIndex = 4;
             buttonCraft.Text = "Craft";
             buttonCraft.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@ namespace FFXIVBot
             // 
             // numericUpDownDuration
             // 
-            numericUpDownDuration.Location = new System.Drawing.Point(149, 36);
+            numericUpDownDuration.Location = new System.Drawing.Point(153, 36);
             numericUpDownDuration.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             numericUpDownDuration.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numericUpDownDuration.Name = "numericUpDownDuration";
@@ -101,7 +101,7 @@ namespace FFXIVBot
             // 
             // numericUpDownCount
             // 
-            numericUpDownCount.Location = new System.Drawing.Point(149, 66);
+            numericUpDownCount.Location = new System.Drawing.Point(153, 66);
             numericUpDownCount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             numericUpDownCount.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
             numericUpDownCount.Name = "numericUpDownCount";
@@ -130,7 +130,7 @@ namespace FFXIVBot
             // labelTotal
             // 
             labelTotal.AutoSize = true;
-            labelTotal.Location = new System.Drawing.Point(150, 99);
+            labelTotal.Location = new System.Drawing.Point(154, 99);
             labelTotal.Name = "labelTotal";
             labelTotal.Size = new System.Drawing.Size(65, 15);
             labelTotal.TabIndex = 9;
@@ -140,7 +140,7 @@ namespace FFXIVBot
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(296, 177);
+            ClientSize = new System.Drawing.Size(299, 177);
             Controls.Add(labelTotal);
             Controls.Add(label4);
             Controls.Add(numericUpDownCount);
@@ -166,7 +166,7 @@ namespace FFXIVBot
         private System.Windows.Forms.Label label3;
 
         private System.Windows.Forms.NumericUpDown numericUpDownDuration;
-        private System.ComponentModel.BackgroundWorker backgroundWorkerCraftBot;
+        private BackgroundWorker backgroundWorkerCraftBot;
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxHotkey;
