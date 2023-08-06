@@ -47,6 +47,7 @@
             label6 = new System.Windows.Forms.Label();
             labelFortyThou = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
+            buttonMacro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDownDuration).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownTurn).BeginInit();
@@ -86,11 +87,11 @@
             // 
             // textBoxHotkey
             // 
-            textBoxHotkey.Location = new System.Drawing.Point(119, 7);
+            textBoxHotkey.Location = new System.Drawing.Point(118, 7);
             textBoxHotkey.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             textBoxHotkey.MaxLength = 1;
             textBoxHotkey.Name = "textBoxHotkey";
-            textBoxHotkey.Size = new System.Drawing.Size(131, 23);
+            textBoxHotkey.Size = new System.Drawing.Size(64, 23);
             textBoxHotkey.TabIndex = 9;
             textBoxHotkey.TextChanged += textBoxHotkey_TextChanged;
             // 
@@ -245,11 +246,22 @@
             label7.TabIndex = 20;
             label7.Text = "10k xp every: ";
             // 
+            // buttonMacro
+            // 
+            buttonMacro.Location = new System.Drawing.Point(189, 10);
+            buttonMacro.Name = "buttonMacro";
+            buttonMacro.Size = new System.Drawing.Size(75, 23);
+            buttonMacro.TabIndex = 21;
+            buttonMacro.Text = "Get Macro";
+            buttonMacro.UseVisualStyleBackColor = true;
+            buttonMacro.Click += buttonMacro_Click;
+            // 
             // GatheringBot
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(507, 154);
+            Controls.Add(buttonMacro);
             Controls.Add(label7);
             Controls.Add(labelFortyThou);
             Controls.Add(numericUpDownGather);
@@ -298,5 +310,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label labelFortyThou;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonMacro;
     }
 }

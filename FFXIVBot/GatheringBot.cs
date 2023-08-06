@@ -87,6 +87,8 @@ namespace FFXIVBot
 
         private void textBoxHotkey_TextChanged(object sender, EventArgs e)
         {
+            if (textBoxHotkey.Text.Length == 0) return;
+
             Settings.Default.gatherMacro = textBoxHotkey.Text.First();
             Settings.Default.Save();
         }
@@ -112,6 +114,18 @@ namespace FFXIVBot
 
             labelxp.Text = $"{oneKMin} m, {oneKSec} s";
             labelFortyThou.Text = $"{tenKHour} h, {tenKMin} m, {tenKSec} s";
+        }
+
+        private void buttonMacro_Click(object sender, EventArgs e)
+        {
+            MacroBox box = new MacroBox();
+            box.textBoxMacro.Text = @"/merror off
+/micon ""Duty Action I""
+/targetnpc
+/ac ""Duty Action I""
+/lockon
+/automove";
+            box.ShowDialog();
         }
     }
 }

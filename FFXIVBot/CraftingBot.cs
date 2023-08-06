@@ -102,6 +102,8 @@ namespace FFXIVBot
 
         private void textBoxHotkey_TextChanged(object sender, EventArgs e)
         {
+            if (textBoxHotkey.Text.Length == 0) return;
+
             Settings.Default.craftMacro = textBoxHotkey.Text.First();
             Settings.Default.Save();
         }
