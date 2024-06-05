@@ -1,0 +1,79 @@
+﻿<Window x:Class="XIVBot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:XIVBot.ViewModels"
+        mc:Ignorable="d"
+        Title="{Binding BotTitle}" Height="430" Width="300"
+        Loaded="MainWindow_OnLoaded"
+        ResizeMode="NoResize">
+    <Window.DataContext>
+        <vm:XIVBotViewModel />
+    </Window.DataContext>
+    <StackPanel>
+        <Button Name="afkButton"
+                Padding="25px"
+                VerticalAlignment="Top"
+                Style="{DynamicResource RoundedButton}"
+                Command="{Binding AfkBot}"
+                Content="{Binding AfkBotText}" 
+                IsEnabled="{Binding AfkEnabled}"/>
+        <Grid Column="2">
+            <Button Name="spinButtonLeft"
+                    Padding="10px, 25px"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Width="145"
+                    Style="{DynamicResource RoundedButton}"
+                    Command="{Binding SpinLeft}"
+                    Content="{Binding LeftSpinText}" 
+                    IsEnabled="{Binding LeftEnabled}" />
+            <Button Name="spinButtonRight"
+                    Padding="10px, 25px"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right"
+                    Width="145"
+                    Style="{DynamicResource RoundedButton}"
+                    Command="{Binding SpinRight}"
+                    Content="{Binding RightSpinText}" 
+                    IsEnabled="{Binding RightEnabled}" />
+        </Grid>
+        
+        <Button Name="islandButton"
+                Padding="25px"
+                VerticalAlignment="Top"
+                Style="{DynamicResource RoundedButton}"
+                Content="Island Gathering Bot"
+                Command="{Binding GatherBot}" />
+        <Button Name="craftingButton"
+                Padding="25px"
+                VerticalAlignment="Top"
+                Style="{DynamicResource RoundedButton}"
+                Command="{Binding CraftingBot}"
+                Content="Crafting Bot" />
+        <Button Name="mgpButton"
+                Padding="25px"
+                VerticalAlignment="Top"
+                Style="{DynamicResource RoundedButton}"
+                IsEnabled="False"
+                Content="MGP Farm" 
+                Command="{Binding MGPFarm}"/>
+        <Grid
+            Column="2">
+            <Label Name="ffProcess"
+                   HorizontalAlignment="Left"
+                   MouseLeftButtonDown="FfProcess_OnMouseLeftButtonDown"
+                   Content="{Binding ProcessLabel, Mode=TwoWay}" />
+            <Button Name="optionsButton"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right"
+                    Style="{DynamicResource RoundedButton}"
+                    Height="30"
+                    Width="90"
+                    Command="{Binding Options}" 
+                    Content="Options"
+                    IsEnabled="{Binding OptionsEnabled}"/>
+        </Grid>
+    </StackPanel>
+</Window>

@@ -4,6 +4,8 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FFXIVBot", "FFXIVBot\FFXIVBot.csproj", "{2965FBF7-7203-4B67-8721-2C69B3A0CC74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XIVBot", "XIVBot\XIVBot.csproj", "{3D8F55F1-0855-4AFB-ABC1-4A52E130AE84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{2965FBF7-7203-4B67-8721-2C69B3A0CC74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2965FBF7-7203-4B67-8721-2C69B3A0CC74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2965FBF7-7203-4B67-8721-2C69B3A0CC74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D8F55F1-0855-4AFB-ABC1-4A52E130AE84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D8F55F1-0855-4AFB-ABC1-4A52E130AE84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D8F55F1-0855-4AFB-ABC1-4A52E130AE84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D8F55F1-0855-4AFB-ABC1-4A52E130AE84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

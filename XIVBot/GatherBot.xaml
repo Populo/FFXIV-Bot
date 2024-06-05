@@ -1,0 +1,101 @@
+﻿<Window x:Class="XIVBot.GatherBot"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:XIVBot.ViewModels"
+        mc:Ignorable="d"
+        Title="GatherBot"
+        ResizeMode="NoResize"
+        SizeToContent="WidthAndHeight" Height="240" Width="220"
+        WindowStartupLocation="CenterOwner"
+        >
+    <Window.DataContext>
+        <vm:GatherBotViewModel />
+    </Window.DataContext>
+    <StackPanel
+        Margin="0,5">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="70"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Macro Hotkey:" VerticalContentAlignment="Stretch"/>
+            <Label Grid.Column="1" Content="{Binding Macro}" VerticalAlignment="Center" HorizontalContentAlignment="Center" />
+            <Button Grid.Column="2" Content="Get Macro" VerticalAlignment="Center" Width="70" Style="{DynamicResource RoundedButton}" Command="{Binding GetMacro}"/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Column="0" HorizontalAlignment="Left" Width="110" Content="Sprint Time (s):"/>
+            <TextBox
+                Grid.Column="1"
+                Width="50"
+                x:Name="SprintBox"
+                PreviewTextInput="ValidateNumberInput"
+                HorizontalAlignment="Left"
+                TextChanged="TextChangeHandler"
+                LostFocus="TextboxLoseFocus" Height="18" VerticalAlignment="Center" Text="{Binding SprintTime, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+            <Button
+                Grid.Column="2"
+                Width="25"
+                HorizontalAlignment="Left"
+                Command="{Binding SprintUp}" VerticalAlignment="Center" Content="^" Margin="10,0,0,0"/>
+            <Button
+                Grid.Column="2"
+                Width="25"
+                HorizontalAlignment="Left"
+                Command="{Binding SprintDown}" VerticalAlignment="Center" Content="v" Margin="35,0,0,0"/>
+        </Grid>
+        <Grid Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="5.5" />
+                <ColumnDefinition Width="44.5"/>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label
+            Grid.Column="0" HorizontalAlignment="Left" Width="110" Content="Gather Time (s):" Grid.ColumnSpan="3"/>
+            <TextBox
+                Grid.Column="1"
+                Width="50"
+                x:Name="GatherBox"
+                PreviewTextInput="ValidateNumberInput"
+                HorizontalAlignment="Center"
+                TextChanged="TextChangeHandler"
+                LostFocus="TextboxLoseFocus" Height="18" VerticalAlignment="Center" Text="{Binding GatherTime, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" Grid.ColumnSpan="2"/>
+            <Button
+            Grid.Column="3"
+            Width="25"
+            HorizontalAlignment="Left"
+            Command="{Binding GatherUp}" VerticalAlignment="Center" Content="^" Margin="10,0,0,0"/>
+            <Button
+            Grid.Column="3"
+            Width="25"
+            HorizontalAlignment="Left"
+            Command="{Binding GatherDown}" VerticalAlignment="Center" Content="v" Margin="35,0,0,0"/>
+        </Grid>
+
+        <Grid Column="2">
+            <Label Content="1k xp:"/>
+            <Label Content="{Binding OneK, Mode=TwoWay}" HorizontalAlignment="Right" Name="LabelOneK"/>
+        </Grid>
+        <Grid Column="2">
+            <Label Content="10k xp:"/>
+            <Label Content="{Binding TenK, Mode=TwoWay}" HorizontalAlignment="Right" Name="LabelTenK"/>
+        </Grid>
+        <Grid Column="2">
+            <Label Content="Times Gathered:"/>
+            <Label Content="{Binding TimesGathered, Mode=TwoWay}" HorizontalAlignment="Right" Name="LabelRunCount"/>
+        </Grid>
+        <Button Content="Start Gathering" 
+                Command="{Binding GatherButton}" 
+                Style="{DynamicResource RoundedButton}"
+                Padding="15px"/>
+    </StackPanel>
+</Window>
