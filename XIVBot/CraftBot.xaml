@@ -108,6 +108,7 @@
             Padding="15px"
             Command="{Binding CraftButton}"
             Name="Craft"
+            IsEnabled="{Binding ButtonEnabled}"
             Content="{Binding Button, Mode=TwoWay}"/>
     </StackPanel>
 </Window>

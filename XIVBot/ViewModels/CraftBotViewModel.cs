@@ -12,12 +12,19 @@ public class CraftBotViewModel : ObservableObject
     private string _timer = "0h 0m 34s";
     private string _buttonText = "Start Crafting";
     private char _macro = '[';
+    private bool _buttonEnabled = true;
     
     public IRelayCommand CraftButton { get; set; }
     public IRelayCommand DurationUp { get; set; }
     public IRelayCommand DurationDown { get; set; }
     public IRelayCommand CraftsUp { get; set; }
     public IRelayCommand CraftsDown { get; set; }
+
+    public bool ButtonEnabled
+    {
+        get => _buttonEnabled;
+        set => SetProperty(ref _buttonEnabled, value);
+    }
 
     private bool _running = false;
     private const int
@@ -41,6 +48,7 @@ public class CraftBotViewModel : ObservableObject
             {
                 RunBot();
             }
+            if (worker.CancellationPending) ButtonEnabled = true;
         };
 
         CraftButton = new RelayCommand(StartCraftBot);
@@ -127,6 +135,7 @@ public class CraftBotViewModel : ObservableObject
         if (_running)
         {
             Helper.AllowSleep();
+            ButtonEnabled = false;
             Button = "Start Crafting";
             _craftWorker.CancelAsync();
         }
