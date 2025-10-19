@@ -1,5 +1,5 @@
 ﻿using System.IO;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace XIVBot;
 
@@ -38,7 +38,7 @@ public class Config
         {
             try
             {
-                return JsonConvert.DeserializeObject<Config>(File.ReadAllText(Helper.ConfigFile)) 
+                return JsonSerializer.Deserialize<Config>(File.ReadAllText(Helper.ConfigFile)) 
                          ?? throw new Exception("Cannot read config file");
             }
             catch
@@ -59,7 +59,7 @@ public class Config
 
     public static void WriteConfigFile(Config config)
     {
-        string contents = JsonConvert.SerializeObject(config);
+        string contents = JsonSerializer.Serialize(config);
         Directory.CreateDirectory(Helper.ConfigPath);
         File.WriteAllText(Helper.ConfigFile, contents);
     }

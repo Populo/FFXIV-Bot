@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:XIVBot.ViewModels"
         mc:Ignorable="d"
-        Title="{Binding BotTitle}" Height="430" Width="300"
+        Title="{Binding BotTitle}" Height="460" Width="300"
         Loaded="MainWindow_OnLoaded"
         ResizeMode="NoResize">
     <Window.DataContext>
@@ -59,21 +59,16 @@
                 IsEnabled="False"
                 Content="MGP Farm" 
                 Command="{Binding MGPFarm}"/>
-        <Grid
-            Column="2">
-            <Label Name="ffProcess"
-                   HorizontalAlignment="Left"
-                   MouseLeftButtonDown="FfProcess_OnMouseLeftButtonDown"
-                   Content="{Binding ProcessLabel, Mode=TwoWay}" />
-            <Button Name="optionsButton"
-                    VerticalAlignment="Top"
-                    HorizontalAlignment="Right"
-                    Style="{DynamicResource RoundedButton}"
-                    Height="30"
-                    Width="90"
-                    Command="{Binding Options}" 
-                    Content="Options"
-                    IsEnabled="{Binding OptionsEnabled}"/>
-        </Grid>
+        <Button Name="optionsButton"
+                VerticalAlignment="Top"
+                Style="{DynamicResource RoundedButton}"
+                Height="30"
+                Command="{Binding Options}"
+                Content="{Binding SettingsText}"
+                IsEnabled="{Binding OptionsEnabled}"/>
+        <Label Name="ffProcess"
+               HorizontalAlignment="Center"
+               MouseLeftButtonDown="FfProcess_OnMouseLeftButtonDown"
+               Content="{Binding ProcessLabel, Mode=TwoWay}" />
     </StackPanel>
 </Window>

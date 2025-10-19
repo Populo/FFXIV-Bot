@@ -1,6 +1,5 @@
-﻿using System.IO;
-using System.Windows;
-using Microsoft.Extensions.Configuration;
+﻿using System.Windows;
+using Velopack;
 
 namespace XIVBot;
 
@@ -10,4 +9,12 @@ namespace XIVBot;
 /// 
 public partial class App : Application
 {
+    [STAThread]
+    private static void Main(string[] args)
+    {
+        VelopackApp.Build().Run();
+        App app = new();
+        app.InitializeComponent();
+        app.Run();
+    }
 }

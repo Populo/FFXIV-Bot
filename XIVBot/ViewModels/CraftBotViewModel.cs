@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -10,8 +11,7 @@ public class CraftBotViewModel : ObservableObject
     private int _crafts = 1;
     private string _timer = "0h 0m 34s";
     private string _buttonText = "Start Crafting";
-    private string _macroKey = "[";
-    private string _throwaway = "";
+    private char _macro = '[';
     
     public IRelayCommand CraftButton { get; set; }
     public IRelayCommand DurationUp { get; set; }
@@ -91,6 +91,15 @@ public class CraftBotViewModel : ObservableObject
     public char Macro
     {
         get => Helper.Config.Craft;
+        set {
+            if (value.ToString() == string.Empty) _macro = Helper.Config.Craft;
+            else
+            {
+                var c = value.ToString().ToUpper()[0];
+                SetProperty(ref _macro, c);
+                Helper.Config.Craft = c;
+            }
+        }
     }
 
     public void UpdateTimers(TimeSpan time)

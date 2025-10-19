@@ -2,6 +2,7 @@
 using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using XIVBot.Services;
 
 namespace XIVBot.ViewModels;
 
@@ -28,6 +29,8 @@ public class XIVBotViewModel : ObservableObject
     private string _afkBotText = "Start AFK Bot";
     private string _leftSpinText = "Start Spinning Left";
     private string _rightSpinText = "Start Spinning Right";
+    
+    private bool _updateFound = false;
 
     private string _processLabel = "Click to connect to Final Fantasy";
 
@@ -96,6 +99,23 @@ public class XIVBotViewModel : ObservableObject
         get => _processLabel;
         set => SetProperty(ref _processLabel, value);
     }
+    
+    public string SettingsText
+    {
+        get => _updateFound ? "Settings (Update Available)" : "Settings";
+    }
+    
+    public bool UpdateFound
+    {
+        get => _updateFound;
+        set
+        {
+            if (SetProperty(ref _updateFound, value))
+            {
+                OnPropertyChanged(nameof(SettingsText));
+            }
+        }
+    }
 
     public string BotTitle => $"XIV Bot v{Helper.BotVersion}";
 
@@ -163,7 +183,28 @@ public class XIVBotViewModel : ObservableObject
                 }
             }
         };
-        
+
+        // Check for updates on startup without blocking
+        Task.Run(async () =>
+        {
+            try
+            {
+                var updateInfo = await UpdateService.CheckForUpdatesAsync();
+                if (updateInfo != null)
+                {
+                    // Update UI on the UI thread
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        UpdateFound = true;
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors silently or log them
+                Console.WriteLine($"Update check failed: {ex.Message}");
+            }
+        });
     }
 
     private void StartAfkBot()

@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Threading;
 using XIVBot.ViewModels;
 
 namespace XIVBot
@@ -12,6 +13,7 @@ namespace XIVBot
     public partial class GatherBot : Window
     {
         private readonly GatherBotViewModel _viewModel;
+        private DispatcherTimer _btnTimer;
         
         public GatherBot()
         {
@@ -19,8 +21,21 @@ namespace XIVBot
             
             _viewModel = DataContext as GatherBotViewModel ?? throw new Exception("Cannot get model");
             _viewModel.Owner = this;
+
+            _btnTimer = new DispatcherTimer()
+            {
+                Interval = TimeSpan.FromMilliseconds(250),
+                IsEnabled = false
+            };
+            _btnTimer.Tick += btnTimer_checkMacro;
         }
-        
+
+        private void btnTimer_checkMacro(object? sender, EventArgs e)
+        {
+            Gather.IsEnabled = GatherMacro.Text != string.Empty;
+            if (Gather.IsEnabled) _btnTimer.Stop();
+        }
+
         private void ValidateNumberInput(object sender, TextCompositionEventArgs e)
         {
             var box = sender as TextBox ?? throw new Exception("cannot get textbox");
@@ -39,11 +54,17 @@ namespace XIVBot
         {
             var box = sender as TextBox ?? throw new Exception("cannot get textbox");
             if (!string.IsNullOrWhiteSpace(box.Text)) return;
-            
+
             if (box == SprintBox) _viewModel.SprintTime = 1;
             else if (box == GatherBox) _viewModel.GatherTime = 1;
+            else if (box == GatherMacro) _viewModel.Macro = Helper.Config.Gather;
         
             _viewModel.CalculateTime();
+        }
+
+        private void GatherMacro_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (_viewModel != null) _btnTimer.Start();
         }
     }
 }

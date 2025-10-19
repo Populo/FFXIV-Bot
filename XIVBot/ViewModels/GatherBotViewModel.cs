@@ -14,6 +14,7 @@ public class GatherBotViewModel : ObservableObject
     private string _tenK = "0h 0m 32s";
     private int _timesGathered = 0;
     private string _buttonText = "Start Gathering";
+    private char _macro = '[';
 
     private readonly BackgroundWorker _worker;
     private bool _running = false;
@@ -31,7 +32,17 @@ public class GatherBotViewModel : ObservableObject
     #region Text Properties
     public char Macro
     {
-        get => Helper.Config.Craft;
+        get => Helper.Config.Gather;
+        set
+        {
+            if (value.ToString() == string.Empty) _macro = Helper.Config.Craft;
+            else
+            {
+                var c = value.ToString().ToUpper()[0];
+                SetProperty(ref _macro, c);
+                Helper.Config.Gather = c;
+            }
+        }
     }
     
     public double SprintTime
@@ -69,6 +80,8 @@ public class GatherBotViewModel : ObservableObject
         get => _buttonText;
         set => SetProperty(ref _buttonText, value);
     }
+
+
     #endregion
 
     #region Button Properties

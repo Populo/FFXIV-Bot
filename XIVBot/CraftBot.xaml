@@ -19,13 +19,15 @@
             <Label
                 HorizontalAlignment="Left"
                 Content="Macro Hotkey:"/>
-            <Label
+            <TextBox
                 HorizontalAlignment="Right"
                 Width="100"
-                Name="MacroLabel"
+                Name="CraftMacro"
                 LostFocus="TextboxLoseFocus" VerticalAlignment="Center"
-                Content="{Binding Macro}"
-                HorizontalContentAlignment="Center"/>
+                Text="{Binding Macro, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                HorizontalContentAlignment="Center"
+                MaxLength="1"
+                TextChanged="CraftMacro_TextChanged"/>
         </Grid>
         <Grid
             Margin="5px">
@@ -105,7 +107,7 @@
             Style="{DynamicResource RoundedButton}"
             Padding="15px"
             Command="{Binding CraftButton}"
-            Name="StartCraftButton"
+            Name="Craft"
             Content="{Binding Button, Mode=TwoWay}"/>
     </StackPanel>
 </Window>

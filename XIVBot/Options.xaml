@@ -1,4 +1,5 @@
 ﻿<Window x:Class="XIVBot.Options"
+        x:Name="OptionsForm"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -142,6 +143,13 @@
         </Grid>
             <Button Content="Save"
                     Command="{Binding SaveButton}"
+                    CommandParameter="{Binding ElementName=OptionsForm}"
+                    Style="{DynamicResource RoundedButton}"
+                    Margin="5px" 
+                    Padding="2px"/>
+            <Button Content="{Binding UpdateButtonText}"
+                    Command="{Binding UpdateButton}"
+                    CommandParameter="{Binding ElementName=OptionsForm}"
                     Style="{DynamicResource RoundedButton}"
                     Margin="5px" 
                     Padding="2px"/>

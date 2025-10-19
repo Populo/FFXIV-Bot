@@ -22,7 +22,7 @@
                 <ColumnDefinition Width="70"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Content="Macro Hotkey:" VerticalContentAlignment="Stretch"/>
-            <Label Grid.Column="1" Content="{Binding Macro}" VerticalAlignment="Center" HorizontalContentAlignment="Center" />
+            <TextBox Grid.Column="1" Name="GatherMacro" Text="{Binding Macro, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" VerticalAlignment="Center" HorizontalContentAlignment="Center" MaxLength="1" TextChanged="GatherMacro_TextChanged"/>
             <Button Grid.Column="2" Content="Get Macro" VerticalAlignment="Center" Width="70" Style="{DynamicResource RoundedButton}" Command="{Binding GetMacro}"/>
         </Grid>
         <Grid>
@@ -94,6 +94,7 @@
             <Label Content="{Binding TimesGathered, Mode=TwoWay}" HorizontalAlignment="Right" Name="LabelRunCount"/>
         </Grid>
         <Button Content="Start Gathering" 
+                Name="Gather"
                 Command="{Binding GatherButton}" 
                 Style="{DynamicResource RoundedButton}"
                 Padding="15px"/>

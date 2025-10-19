@@ -1,6 +1,8 @@
 ﻿using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Velopack;
+using XIVBot.Services;
 
 namespace XIVBot.ViewModels;
 
@@ -8,12 +10,22 @@ public class OptionsViewModel : ObservableObject
 {
     #region Text Fields
     
+    private string _updateLabel = "Check for updates";
+    
+    public string UpdateButtonText
+    {
+        get => _updateLabel;
+        set => SetProperty(ref _updateLabel, value);
+    }
+    
     #endregion
     
     #region Buttons
     
     public IRelayCommand SaveButton { get; set; }
-    public IRelayCommand CancelButton { get; set; }
+    public IRelayCommand UpdateButton { get; set; }
+
+    private UpdateInfo? _updateInfo { get; set; }
     
     #endregion
     
@@ -74,22 +86,29 @@ public class OptionsViewModel : ObservableObject
     }
     #endregion
 
-    public Options OptionsWindow { get; set; }
 
     public OptionsViewModel()
     {
-        SaveButton = new RelayCommand(() =>
+        SaveButton = new RelayCommand<Window>((window) =>
         {
             Helper.WriteConfig();
             MessageBox.Show("Config Saved");
-            
-            if (null != OptionsWindow) OptionsWindow.Close();
+
+            window?.Close();
         });
-        CancelButton = new RelayCommand(() =>
+        
+        UpdateButton = new AsyncRelayCommand<Window>(async (window) =>
         {
-            Helper.Config = Config.LoadConfig();
-            
-            if (null != OptionsWindow) OptionsWindow.Close();
+            if (null == _updateInfo)
+            {
+                UpdateButtonText = "Checking for updates...";
+                _updateInfo = await UpdateService.CheckForUpdatesAsync();
+                UpdateButtonText = null != _updateInfo ? $"Click to update ({_updateInfo.TargetFullRelease.Version})" : "No updates available";
+            }
+            else
+            {
+                await UpdateService.UpdateAppAsync(_updateInfo);
+            }
         });
     }
 }
